@@ -1,5 +1,4 @@
 
-
 public class ArrayExamples {
 
   // Changes the input array to be in reversed order
@@ -30,9 +29,13 @@ public class ArrayExamples {
       if(num < lowest) { lowest = num; }
     }
     double sum = 0;
+    boolean removed=false;
+    
     for(double num: arr) {
-      if(num != lowest) { sum += num; }
+      if(num != lowest||num==lowest&&removed) { sum += num; }
+      else removed=true;
     }
+    
     return sum / (arr.length - 1);
   }
 
